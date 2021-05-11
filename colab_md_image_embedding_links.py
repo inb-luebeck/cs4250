@@ -28,7 +28,7 @@ def run():
     output = dict()
     for key, val in DRIVE_LINKS.items():
         match = re.match(RGX, val)
-        assert match, key
+        assert bool(match), key
         im_id = match.group(1)
 
         new_link = "https://drive.google.com/uc?id=" + im_id
